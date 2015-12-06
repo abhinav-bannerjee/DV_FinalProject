@@ -1,4 +1,4 @@
-"Company","Country","State","Industry","Rank","Year","Sales, mln.US$","Profits, mln.US$","Assets, mln.US$","Market Value, mln.US$"
+Company,Country,State,Industry,Rank,Year,Sales,Profits,Assets,Market_Value
 3i Group,United Kingdom,Total,Investment Services,1573,2015,1200,1000,7300,7000
 3M,United States,Minnesota,Conglomerates,205,2015,31800,5000,31300,105100
 77 Bank,Japan,Total,Regional Banks,1616,2015,982,178,69200,2100
