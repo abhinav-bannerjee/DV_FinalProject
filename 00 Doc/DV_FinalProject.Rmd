@@ -12,7 +12,10 @@ source("../.Rprofile",echo=FALSE)
 ```
 
 ###General Steps
-
+1. Acquire data source (ours was Top 2500 Companies as ranked by Forbes)
+2. Format data using ETL techniques for upload to server
+3. Analyze data and prepare visualizations in Tableau and RStudio (using ggplot2 and other packages)
+4. Create and publish Shiny web application with interactive visualizations
 
 
 [RShiny App. Click Here!](https://ckckchen.shinyapps.io/DV_FinalProject)
@@ -26,11 +29,20 @@ source("../04 Shiny/server.R",print.eval=FALSE,echo = TRUE)
 
 
 ###Visualization
-![](./1-2.png) 
-![](./1-3.png) 
-![](./1.png) 
-![](./2.png) 
-![](./3.png) 
+__Pie Chart shows market value of industries__
+![](./piechart.jpg)
+
+__Crosstab displays number of ranked companies in every continent based on industry__
+![](./crosstab.png) 
+
+__Barchart allows us to see which industries take up most of the ranks__
+![](./barchart.png)
+
+__Histogram shows concentration of overall profits in companies__
+![](./histogram.png) 
+
+__Scatterplot shows logarithmic regression of profits and overall rank for each company__
+![](./scatterplot.png) 
 ![](./4.png) 
 ![](./5.png) 
 ![](./6.png) 
