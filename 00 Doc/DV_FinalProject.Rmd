@@ -1,0 +1,40 @@
+---
+title: "DV_FinalProject"
+output: html_document
+---
+
+Name: Ke Chen, Abhinav Bannerjee
+
+UT EID: kc35827, ab45393
+
+```{r,message=FALSE,echo=FALSE}
+source("../.Rprofile",echo=FALSE)
+```
+
+###General Steps
+
+
+
+[RShiny App. Click Here!](https://ckckchen.shinyapps.io/DV_FinalProject)
+
+```{r,message= FALSE,echo=FALSE,warning=FALSE}
+source("../04 Shiny/ui.R",print.eval=FALSE,echo = TRUE)
+```
+```{r,message= FALSE,echo=FALSE,warning=FALSE}
+source("../04 Shiny/server.R",print.eval=FALSE,echo = TRUE)
+```
+
+
+###Visualization
+![](./1-2.png) 
+![](./1-3.png) 
+![](./1.png) 
+![](./2.png) 
+![](./3.png) 
+![](./4.png) 
+![](./5.png) 
+![](./6.png) 
+![](./7.png) 
+![](./8.png) 
+![](./9.png) 
+
