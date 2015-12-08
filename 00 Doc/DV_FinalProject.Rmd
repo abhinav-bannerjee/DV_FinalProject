@@ -64,9 +64,9 @@ All shiny graph codes are included here. We use grammar of graph and Data wrangl
 
 >###Visualization
 *********************************************************************
-We Start our project by following the steps in Methodology.
-We try to use different kind of Plots to discover interesting things.
-We generate __Barchart__, __Crosstab__, __Histogram__,__Scatter Plot__,__Box Plot__,__Map__,__Pie Chart__ and __Bubble__ to find some interesting facts.
+We started our project by following the steps in Tableau Methodology.
+We tried to use different plots to discover interesting things.
+We generated a __Barchart__, __Crosstab__, __Histogram__,__Scatter Plot__,__Box Plot__,__Map__,__Pie Chart__ and __Bubble__ to find some interesting facts.
 
 
 **********************************************************************
