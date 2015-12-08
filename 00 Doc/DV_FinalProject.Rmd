@@ -29,23 +29,26 @@ source("../04 Shiny/server.R",print.eval=FALSE,echo = TRUE)
 
 
 ###Visualization
-__Pie Chart shows market value of industries__
-![](./piechart.jpg)
+__Barchart allows us to see which industries take up most of the ranks__
+![](./barchart.png)
 
 __Crosstab displays number of ranked companies in every continent based on industry__
 ![](./crosstab.png) 
 
-__Barchart allows us to see which industries take up most of the ranks__
-![](./barchart.png)
+__This is a breakdown of % total profits and % total average profits for each industry__
+![](./profit-industry.png)
 
-__Histogram shows concentration of overall profits in companies__
-![](./histogram.png) 
+__The boxplot visualizes the highest profits based on industry in each continent__
+![](./boxplot.png) 
 
-__Scatterplot shows logarithmic regression of profits and overall rank for each company__
-![](./scatterplot.png) 
+__Pie Chart shows market value of industries__
+![](./piechart.jpg)
 
 __This chart relates industry and market value by size__
 ![](./marketvalue.png) 
+
+__This map shows a state-by-state breakdown of notable ranked companies and their respective industry__
+![](./USRank.png) 
 
 __This map shows the average profits among the ranked companies worldwide__
 ![](./avgprofits.png) 
@@ -53,11 +56,13 @@ __This map shows the average profits among the ranked companies worldwide__
 __This map shows median profits (in millions USD) in each country__
 ![](./medianprofits.png) 
 
-__This map shows a state-by-state breakdown of notable ranked companies and their respective industry__
-![](./USRank.png) 
+__Histogram shows concentration of overall profits in companies__
+![](./histogram.png) 
 
-__The boxplot visualizes the hights profits based on industry in each continent__
-![](./boxplot.png) 
+__Scatterplot shows logarithmic regression of profits and overall rank for each company__
+![](./scatterplot.png) 
+
+
 
 
 
