@@ -32,7 +32,7 @@ ggplot() +
                            1933,
                            2033,
                            2133, recursive = FALSE)), 
-          mapping=aes(x=RANK, y=PROFITS,label=PROFITS,size = 8), 
+          mapping=aes(x=RANK, y=PROFITS,label=PROFITS), 
           stat="identity", 
           stat_params=list(), 
           geom="text",
