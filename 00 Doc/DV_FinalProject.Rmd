@@ -43,10 +43,21 @@ __Histogram shows concentration of overall profits in companies__
 
 __Scatterplot shows logarithmic regression of profits and overall rank for each company__
 ![](./scatterplot.png) 
-![](./4.png) 
-![](./5.png) 
-![](./6.png) 
-![](./7.png) 
-![](./8.png) 
-![](./9.png) 
+
+__This chart relates industry and market value by size__
+![](./marketvalue.png) 
+
+__This map shows the average profits among the ranked companies worldwide__
+![](./avgprofits.png) 
+
+__This map shows median profits (in millions USD) in each country__
+![](./medianprofits.png) 
+
+__This map shows a state-by-state breakdown of notable ranked companies and their respective industry__
+![](./USRank.png) 
+
+__The boxplot visualizes the hights profits based on industry in each continent__
+![](./boxplot.png) 
+
+
 
