@@ -16,7 +16,7 @@ shinyServer(function(input, output) {
       coord_cartesian() + 
       scale_x_continuous() +
       scale_y_continuous() +
-      labs(title='RANKS') +
+      labs(title='RANKS~Profits') +
       labs(x="Rank", y=paste("Profit")) +
       
       layer(data=df, 
@@ -89,7 +89,7 @@ shinyServer(function(input, output) {
     plot3
   })
   df2 <- data.frame(fromJSON(getURL(URLencode('skipper.cs.utexas.edu:5001/rest/native/?query="select * from TOPCOMPANY "'),httpheader=c(DB='jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl', USER='C##cs329e_kc35827', PASS='orcl_kc35827', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE) ))
-  output$barchart <- renderPlot(height=1500, width=2500,{
+  output$barchart <- renderPlot(height=1500, width=1200,{
     a <- df2 %>%select(INDUSTRY,RANK)%>%group_by(INDUSTRY)%>%summarise(n = n()/2008*100)
     plot2<-ggplot() + 
       coord_cartesian() + 
@@ -112,11 +112,15 @@ shinyServer(function(input, output) {
             geom="text",
             geom_params=list(colour="red", hjust=-0.5), 
             position=position_identity()
-      )
+      )+layer(data=a, 
+              mapping=aes(yintercept = 0.8), 
+              geom="hline",
+              geom_params=list(colour="red")
+      ) 
     plot2
   })
   df4 <- data.frame(fromJSON(getURL(URLencode('skipper.cs.utexas.edu:5001/rest/native/?query="select * from TOPCOMPANY "'),httpheader=c(DB='jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl', USER='C##cs329e_kc35827', PASS='orcl_kc35827', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE) ))
-  output$Histogram<- renderPlot(height=150, width=250,{
+  output$Histogram<- renderPlot(height=600, width=1200,{
     plot4<-ggplot() + 
       coord_cartesian() + 
       scale_x_continuous() +
