@@ -1,5 +1,4 @@
-setwd("/Users/CK/DataVisualization/DV_Finalproject/01 Data")
-
+setwd("/Users/CK/DV_Finalproject/01 Data")
 file_path <- "2.csv"
 
 df <- read.csv(file_path)
@@ -23,11 +22,6 @@ if( length(measures) > 1 || ! is.na(dimensions)) {
     sql <- paste(sql, paste(d, "varchar2(4000),\n"))
   }
 }
-if( length(measures) > 1 || ! is.na(measures)) {
-  for(m in measures) {
-    if(m != tail(measures, n=1)) sql <- paste(sql, paste(m, "number(38,4),\n"))
-    else sql <- paste(sql, paste(m, "number(38,4)\n"))
-  }
-}
+
 sql <- paste(sql, ");")
 cat(sql)

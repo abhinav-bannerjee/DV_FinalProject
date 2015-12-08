@@ -1,4 +1,4 @@
-setwd("/Users/CK/DataVisualization/DV_Finalproject/01 Data")
+setwd("/Users/CK/DV_Finalproject/01 Data")
 
 file_path <- "1.csv"
 
@@ -11,7 +11,7 @@ names(df) <- gsub("\\.+", "_", names(df))
 str(df) # Uncomment this and  run just the lines to here to get column types to use for getting the list of measures.
 measures <- c("Rank","Year","Sales","Profits","Assets","Market_Value")
 
-
+dimensions <- setdiff(names(df), measures)
 
 
 
