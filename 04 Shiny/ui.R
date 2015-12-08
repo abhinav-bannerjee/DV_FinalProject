@@ -28,6 +28,19 @@ navbarPage(
            fluidRow(column(3),column(5,sliderInput(inputId = "hist1", label = "Binsize",min = 0, max =5000 ,  value = 1000)),
            mainPanel(plotOutput("Histogram"))
   )
-))
+),
+tabPanel(title = "Pie Chart",
+         fluidRow(column(5),column(7,radioButtons("radio", label = h3("Slect the Measure"),
+                                                choices = list("Count of Rank" = 1, "Market Value" = 2
+                                                               ),selected = 1))),
+         
+         fluidRow(column(5),column(7,
+                                   actionButton(inputId = "piechar",  label = "Generate Pie Chart")
+         )),
+         
+         mainPanel(plotOutput("piechart")
+                         )
+)
+)
 
 

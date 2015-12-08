@@ -106,7 +106,7 @@ shinyServer(function(input, output) {
             position=position_identity()
       )+coord_flip()+
       layer(data=a, 
-            mapping=aes(x=INDUSTRY, y=n,label = round(n,digits = 2)), 
+            mapping=aes(x=INDUSTRY, y=n,label = paste(round(n,digits = 2),"%")), 
             stat="identity", 
             stat_params=list(), 
             geom="text",
@@ -136,6 +136,30 @@ shinyServer(function(input, output) {
             position=position_stack()
       )
     plot4
+  })
+  df5 <-eventReactive(input$piechar, {data.frame(fromJSON(getURL(URLencode('skipper.cs.utexas.edu:5001/rest/native/?query="select * from TOPCOMPANY "'),httpheader=c(DB='jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl', USER='C##cs329e_kc35827', PASS='orcl_kc35827', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE) ))
+  })
+  output$piechart <- renderPlot(height=1800, width=1800,{
+    if (input$radio == 1){
+      c <-df5() %>%select(INDUSTRY,RANK)%>%group_by(INDUSTRY)%>%summarise(n = round((n()/2008*100), digits=2 ))%>%arrange(desc(n))
+      crank1 <- c(c$n)
+      lbls <- paste(c$INDUSTRY,c$n,sep="  ")
+      lbls <- paste(lbls,"%")
+      pie(crank1,labels = lbls, col=rainbow(length(crank1)),main="Pie Chart of Rank")
+    }
+    else{
+      c <-df5() %>%select(INDUSTRY,MARKET_VALUE)%>%group_by(INDUSTRY)%>%summarise(n = sum(MARKET_VALUE))%>%arrange(desc(n))%>%mutate(pe = sum(n))
+      crank1 <- c(c$n)
+      crank2 <- slice(select(c,3),1)
+      lbls <- paste(c$INDUSTRY,round(c$n /c(crank2$pe)*100, digits = 2),sep="  ")
+      lbls <- paste(lbls,"%")
+      pie(crank1,labels = lbls, col=rainbow(length(crank1)),main="Pie Chart of Market Value")
+      
+    }
+   
+   
+    
+    
   })
 })
 
