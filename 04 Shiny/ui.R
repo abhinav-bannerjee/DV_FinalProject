@@ -25,7 +25,7 @@ navbarPage(
   ),
   
   tabPanel(title = "Histogram",
-           fluidRow(column(2),column(5,sliderInput(inputId = "hist1", label = "Binsize",min = 0, max =5000 ,  value = 1000)),
+           fluidRow(column(3),column(5,sliderInput(inputId = "hist1", label = "Binsize",min = 0, max =5000 ,  value = 1000)),
            mainPanel(plotOutput("Histogram"))
   )
 ))
