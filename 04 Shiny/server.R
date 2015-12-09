@@ -90,7 +90,8 @@ shinyServer(function(input, output) {
   })
   df2 <- data.frame(fromJSON(getURL(URLencode('skipper.cs.utexas.edu:5001/rest/native/?query="select * from TOPCOMPANY "'),httpheader=c(DB='jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl', USER='C##cs329e_kc35827', PASS='orcl_kc35827', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE) ))
   output$barchart <- renderPlot(height=1500, width=1200,{
-    a <- df2 %>%select(INDUSTRY,RANK)%>%group_by(INDUSTRY)%>%summarise(n = n()/2008*100)
+    a <- df2 %>%select(INDUSTRY,RANK)%>%group_by(INDUSTRY)%>%summarise(n = n()/2008*100) %>% arrange(desc(n))
+    a$INDUSTRY <-factor(a$INDUSTRY, levels =a$INDUSTRY[order(a$n)])
     plot2<-ggplot() + 
       coord_cartesian() + 
       scale_x_discrete() +
@@ -98,19 +99,19 @@ shinyServer(function(input, output) {
       labs(title='Rank~Industry') +
       labs(x=paste("Industry"), y=paste("% of Total #Rank")) +
       layer(data=a, 
-            mapping=aes(x=INDUSTRY, y=n,color = n), 
+            mapping=aes(x=INDUSTRY, y= n,color = n), 
             stat="identity", 
             stat_params=list(), 
             geom="bar",
             geom_params=list(colour="green"), 
             position=position_identity()
       )+coord_flip()+
-      layer(data=a, 
+      layer(data= a, 
             mapping=aes(x=INDUSTRY, y=n,label = paste(round(n,digits = 2),"%")), 
             stat="identity", 
             stat_params=list(), 
             geom="text",
-            geom_params=list(colour="red", hjust=-0.5), 
+            geom_params=list(colour="red", hjust=-1), 
             position=position_identity()
       )+layer(data=a, 
               mapping=aes(yintercept = 0.8), 
